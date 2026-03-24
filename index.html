@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Del Sol Income Tax Services</title>
+  <meta name="description" content="Preparación profesional de impuestos, apoyo para pequeños negocios y atención personalizada en español e inglés." />
+  <style>
+    :root {
+      --navy: #143a63;
+      --blue: #215d9c;
+      --gold: #f4b53f;
+      --light: #f7f9fc;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --white: #ffffff;
+      --border: #d9e2ec;
+      --success: #1f7a4d;
+      --shadow: 0 12px 30px rgba(20, 58, 99, 0.12);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.95rem;
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--gold), #ffd978);
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.25rem;
+      box-shadow: var(--shadow);
+      flex-shrink: 0;
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      line-height: 1.2;
+      color: var(--navy);
+    }
+
+    .brand-text p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .lang-switch button {
+      border: 0;
+      background: transparent;
+      padding: 10px 14px;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--navy);
+    }
+
+    .lang-switch button.active {
+      background: var(--gold);
+      color: #10243d;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #10243d;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(0.98);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--navy);
+      color: var(--navy);
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(20,58,99,0.88), rgba(20,58,99,0.82)),
+        url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--white);
+      padding: 92px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+      padding: 8px 14px;
+      margin-bottom: 16px;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .hero h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      max-width: 680px;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .point {
+      background: rgba(255,255,255,0.08);
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .point strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .card {
+      background: var(--white);
+      color: var(--text);
+      padding: 28px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .mini-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .mini-list li {
+      padding-left: 28px;
+      position: relative;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .mini-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--success);
+      font-weight: 900;
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 42px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .services-grid,
+    .features-grid,
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service,
+    .feature,
+    .review {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      background: var(--white);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .service h3,
+    .feature h3,
+    .review h3 {
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .service p,
+    .feature p,
+    .review p {
+      color: var(--muted);
+    }
+
+    .band {
+      background: var(--light);
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .about-panel,
+    .contact-panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .about-panel h3,
+    .contact-panel h3 {
+      color: var(--navy);
+      margin-bottom: 12px;
+      font-size: 1.45rem;
+    }
+
+    .about-panel p,
+    .contact-panel p,
+    .contact-panel li {
+      color: var(--muted);
+    }
+
+    .about-list,
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .about-list li,
+    .contact-list li {
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .about-list li::before,
+    .contact-list li::before {
+      content: '•';
+      position: absolute;
+      left: 10px;
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    label {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      font: inherit;
+      color: var(--text);
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .faq {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      background: var(--white);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    details p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    footer {
+      background: #0e2742;
+      color: rgba(255,255,255,0.9);
+      padding: 28px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .small {
+      font-size: 0.94rem;
+      color: rgba(255,255,255,0.82);
+    }
+
+    [data-lang] {
+      display: none;
+    }
+
+    body.lang-es [data-lang="es"],
+    body.lang-en [data-lang="en"] {
+      display: inline;
+    }
+
+    body.lang-es [data-lang-block="es"],
+    body.lang-en [data-lang-block="en"] {
+      display: block;
+    }
+
+    body.lang-es [data-lang-flex="es"],
+    body.lang-en [data-lang-flex="en"] {
+      display: flex;
+    }
+
+    body.lang-es [data-lang-grid="es"],
+    body.lang-en [data-lang-grid="en"] {
+      display: grid;
+    }
+
+    @media (max-width: 1000px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .services-grid,
+      .features-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        gap: 12px 18px;
+      }
+
+      .hero,
+      section {
+        padding: 64px 0;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .services-grid,
+      .features-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar .container,
+      .footer-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body class="lang-es">
+  <div class="topbar">
+    <div class="container">
+      <div>
+        <span data-lang="es">Atendemos a individuos, familias y pequeños negocios</span>
+        <span data-lang="en">Serving individuals, families, and small businesses</span>
+      </div>
+      <div>
+        <span data-lang="es">Llámanos: 720-732-7069 | Correo:mariadanielquezada@gmail.com</span>
+        <span data-lang="en">Call: 720-732-7069 | Email:mariadanielquezada@gmail.com</span>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <img src="logo.png" alt="Del Sol Income Tax Company Logo" style="height:100px;">
+        <div class="brand-text">
+          <h1>Del Sol Income Tax Services</h1>
+          <p>
+            <span data-lang="es">Servicio confiable en español e inglés</span>
+            <span data-lang="en">Trusted service in Spanish and English</span>
+          </p>
+        </div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="#servicios"><span data-lang="es">Servicios</span><span data-lang="en">Services</span></a></li>
+          <li><a href="#nosotros"><span data-lang="es">Nosotros</span><span data-lang="en">About</span></a></li>
+          <li><a href="#porque"><span data-lang="es">Por qué elegirnos</span><span data-lang="en">Why Us</span></a></li>
+          <li><a href="#preguntas"><span data-lang="es">Preguntas</span><span data-lang="en">FAQ</span></a></li>
+          <li><a href="#contacto" class="btn btn-primary"><span data-lang="es">Agenda una cita</span><span data-lang="en">Book an Appointment</span></a></li>
+          <li>
+            <div class="lang-switch" aria-label="Selector de idioma">
+              <button id="btn-es" class="active" type="button">ES</button>
+              <button id="btn-en" type="button">EN</button>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">
+            <span data-lang="es">Precisión. Confianza. Atención personal.</span>
+            <span data-lang="en">Accuracy. Trust. Personal service.</span>
+          </span>
+          <h2>
+            <span data-lang="es">Ayuda de impuestos en la que puedes confiar.</span>
+            <span data-lang="en">Tax help you can trust.</span>
+          </h2>
+          <p>
+            <span data-lang="es">Del Sol Income Tax Services ayuda a individuos y pequeños negocios con preparación de impuestos, organización financiera y apoyo durante todo el año. Recibe orientación clara, atención rápida y un servicio profesional.</span>
+            <span data-lang="en">Del Sol Income Tax Services helps individuals and small businesses with tax preparation, financial organization, and year-round support. Get clear guidance, responsive service, and professional care.</span>
+          </p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary">
+              <span data-lang="es">Programa tu cita</span>
+              <span data-lang="en">Schedule Your Appointment</span>
+            </a>
+            <a href="#servicios" class="btn btn-secondary">
+              <span data-lang="es">Ver servicios</span>
+              <span data-lang="en">View Services</span>
+            </a>
+          </div>
+          <div class="hero-points">
+            <div class="point">
+              <strong><span data-lang="es">Declaraciones personales</span><span data-lang="en">Personal Tax Returns</span></strong>
+              <span data-lang="es">Apoyo para individuos y familias.</span>
+              <span data-lang="en">Support for individuals and families.</span>
+            </div>
+            <div class="point">
+              <strong><span data-lang="es">Impuestos para negocios</span><span data-lang="en">Business Tax Services</span></strong>
+              <span data-lang="es">Ayuda para dueños de pequeños negocios.</span>
+              <span data-lang="en">Help for small business owners.</span>
+            </div>
+            <div class="point">
+              <strong><span data-lang="es">Apoyo todo el año</span><span data-lang="en">Year-Round Support</span></strong>
+              <span data-lang="es">Respuesta a tus preguntas después de la temporada.</span>
+              <span data-lang="en">Answers to your questions after tax season.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>
+            <span data-lang="es">Experiencia que Genera Confianza</span>
+            <span data-lang="en">Experience That Builds Trust</span>
+          </h3>
+          <p>
+            <span data-lang="es">Este negocio de impuestos se fundó con la convicción de que cada persona y negocio merece claridad y confianza en sus finanzas. Con más de ocho años de experiencia, ayudamos a individuos y pequeñas empresas a navegar la preparación de impuestos, solicitudes de ITIN y estrategias financieras. Nuestro enfoque es construir confianza, brindar educación y asegurarnos de que te sientas totalmente respaldado en cada paso.</span>
+            <span data-lang="en">This tax business was founded on the belief that every person and business deserves clarity and confidence in their finances. With over eight years of experience, we help individuals and small businesses navigate tax preparation, ITIN applications, and financial strategy. Our focus is on building trust, providing education, and ensuring you feel fully supported every step of the way.</span>
+          </p>
+          <ul class="mini-list">
+            <li><span data-lang="es">Preparación profesional de impuestos</span><span data-lang="en">Professional tax preparation</span></li>
+            <li><span data-lang="es">Atención personalizada</span><span data-lang="en">Personalized service</span></li>
+            <li><span data-lang="es">Servicio en español e inglés</span><span data-lang="en">Service in Spanish and English</span></li>
+            <li><span data-lang="es">Citas flexibles</span><span data-lang="en">Flexible appointments</span></li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary" style="width:100%;">
+            <span data-lang="es">Solicita una llamada</span>
+            <span data-lang="en">Request a Call Back</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <h2><span data-lang="es">Servicios de impuestos para tus necesidades</span><span data-lang="en">Tax services built for your needs</span></h2>
+          <p><span data-lang="es">Brindamos orientación clara en la que puedes confiar</span><span data-lang="en">We provide clear guidance you can trust.</span></p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service">
+            <h3><span data-lang="es">Declaraciones individuales</span><span data-lang="en">Individual Tax Preparation</span></h3>
+            <p><span data-lang="es">Preparación de declaraciones federales y estatales para individuos, familias y trabajadores independientes.</span><span data-lang="en">Federal and state tax preparation for individuals, families, and self-employed taxpayers.</span></p>
+          </article>
+          <article class="service">
+            <h3><span data-lang="es">Impuestos para pequeños negocios</span><span data-lang="en">Small Business Tax Returns</span></h3>
+            <p><span data-lang="es">Apoyo para propietarios únicos, LLCs y pequeños negocios en crecimiento.</span><span data-lang="en">Support for sole proprietors, LLCs, and growing small businesses.</span></p>
+          </article>
+          <article class="service">
+            <h3><span data-lang="es">Guía de documentos e ITIN</span><span data-lang="en">ITIN and Document Guidance</span></h3>
+            <p><span data-lang="es">Ayuda para reunir documentos y prepararte mejor para tu cita.</span><span data-lang="en">Help gathering documents and preparing for a smoother appointment.</span></p>
+          </article>
+          <article class="service">
+            <h3><span data-lang="es">Planeación fiscal</span><span data-lang="en">Tax Planning</span></h3>
+            <p><span data-lang="es">Estimaciones, revisión de retenciones y preparación anticipada para la próxima temporada.</span><span data-lang="en">Tax estimates, withholding review, and planning ahead for next season.</span></p>
+          </article>
+          <article class="service">
+            <h3><span data-lang="es">Apoyo de bookkeeping</span><span data-lang="en">Bookkeeping Support</span></h3>
+            <p><span data-lang="es">Organización básica y limpieza de registros para preparar mejor la declaración.</span><span data-lang="en">Basic record cleanup and organization to support tax filing.</span></p>
+          </article>
+          <article class="service">
+            <h3><span data-lang="es">Declaraciones enmendadas</span><span data-lang="en">Amended Returns</span></h3>
+            <p><span data-lang="es">Revisión de declaraciones anteriores y correcciones cuando sea necesario.</span><span data-lang="en">Review of prior returns and corrections when needed.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="nosotros">
+      <div class="container">
+        <div class="section-head">
+          <h2><span data-lang="es">Sobre Del Sol Income Tax Services</span><span data-lang="en">About Del Sol Income Tax Services</span></h2>
+          <p><span data-lang="es">Te apoyamos en cada paso del camino.</span><span data-lang="en">We support you every step of the way.</span></p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-panel">
+            <h3><span data-lang="es">Atención local y personalizada</span><span data-lang="en">Local and personalized service</span></h3>
+            <p><span data-lang="es">Daniela comenzó un negocio y rápidamente se dio cuenta de lo complejos que pueden ser los impuestos. Tomó la iniciativa, aprendió a fondo la preparación de impuestos y convirtió ese conocimiento en un servicio para ayudar a otros. Hoy, Del Sol Income Tax Services apoya a individuos, familias y pequeños negocios de la comunidad a manejar sus impuestos con confianza, compartiendo las mismas lecciones que ella aprendió en el camino.</span><span data-lang="en">Daniela started her small business and quickly realized how complex taxes could be. She took matters into her own hands, learned the ins and outs of tax preparation, and turned that knowledge into a service for others. Now, Del Sol Income Tax Services helps local individuals, families, and small businesses navigate taxes with confidence, sharing the same lessons she learned firsthand.</span></p>
+            <ul class="about-list">
+              <li><span data-lang="es">Comunicación clara y amable</span><span data-lang="en">Clear and friendly communication</span></li>
+              <li><span data-lang="es">Atención en español e inglés</span><span data-lang="en">Service in Spanish and English</span></li>
+              <li><span data-lang="es">Enfoque en precisión y confianza</span><span data-lang="en">Focus on accuracy and trust</span></li>
+              <li><span data-lang="es">Citas adaptadas a tu horario</span><span data-lang="en">Appointments built around your schedule</span></li>
+            </ul>
+          </div>
+          <div class="about-panel">
+            <h3><span data-lang="es">Lo que más valoran los clientes</span><span data-lang="en">What clients value most</span></h3>
+            <p><span data-lang="es">Durante más de ocho años, ha ayudado a pequeñas empresas e individuos a manejar sus impuestos y finanzas. Se especializa en la preparación de impuestos, trámites de ITIN y asesoría financiera. Sus valores se basan en la confianza, la educación y en asegurar que cada persona se sienta segura en sus decisiones financieras.</span><span data-lang="en">For over eight years, she has been helping small businesses and individuals manage their taxes and finances. She specializes in tax preparation, ITIN applications, and financial advice. Her values are built on trust, education, and ensuring every client feels confident in their financial decisions.</span></p>
+            <ul class="about-list">
+              <li><span data-lang="es">Lista clara de documentos antes de la cita</span><span data-lang="en">Clear list of documents before the appointment</span></li>
+              <li><span data-lang="es">Explicación simple de los siguientes pasos</span><span data-lang="en">Simple explanation of next steps</span></li>
+              <li><span data-lang="es">Apoyo antes y después de presentar</span><span data-lang="en">Support before and after filing</span></li>
+              <li><span data-lang="es">Respeto y profesionalismo con cada cliente</span><span data-lang="en">Respect and professionalism with every client</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="porque">
+      <div class="container">
+        <div class="section-head">
+          <h2><span data-lang="es">Por qué elegir Del Sol</span><span data-lang="en">Why choose Del Sol</span></h2>
+          <p><span data-lang="es">Un buen sitio de impuestos debe responder rápido una pregunta: por qué alguien debe contactarte hoy.</span><span data-lang="en">A good tax website should answer one question fast: why someone should contact you today.</span></p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature">
+            <h3><span data-lang="es">Comunicación clara</span><span data-lang="en">Clear communication</span></h3>
+            <p><span data-lang="es">Los clientes quieren respuestas directas y un proceso sencillo.</span><span data-lang="en">Clients want direct answers and a simple process.</span></p>
+          </article>
+          <article class="feature">
+            <h3><span data-lang="es">Apoyo todo el año</span><span data-lang="en">Year-round help</span></h3>
+            <p><span data-lang="es">Muchas personas valoran tener apoyo después de la temporada de impuestos.</span><span data-lang="en">Many people value support after tax season ends.</span></p>
+          </article>
+          <article class="feature">
+            <h3><span data-lang="es">Servicio bilingüe</span><span data-lang="en">Bilingual service</span></h3>
+            <p><span data-lang="es">Si el negocio atiende a clientes hispanohablantes, esto debe verse desde arriba.</span><span data-lang="en">If the business serves Spanish-speaking clients, this should be visible near the top.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <h2><span data-lang="es">Opiniones de clientes</span><span data-lang="en">Client feedback</span></h2>
+          <p><span data-lang="es">Te guiamos con claridad y confianza.</span><span data-lang="en">We guide you with clarity and confidence.</span></p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review">
+            <h3><span data-lang="es">Profesional y rápida</span><span data-lang="en">Professional and responsive</span></h3>
+            <p><span data-lang="es">“Todo el proceso fue claro y sencillo. Me explicaron cada paso.”</span><span data-lang="en">“The whole process was clear and simple. Every step was explained to me.”</span></p>
+          </article>
+          <article class="review">
+            <h3><span data-lang="es">Atención amable</span><span data-lang="en">Friendly service</span></h3>
+            <p><span data-lang="es">“Me sentí en confianza para hacer preguntas y recibí muy buena atención.”</span><span data-lang="en">“I felt comfortable asking questions and received great service.”</span></p>
+          </article>
+          <article class="review">
+            <h3><span data-lang="es">Excelente para pequeños negocios</span><span data-lang="en">Great for small businesses</span></h3>
+            <p><span data-lang="es">“Muy organizada, muy profesional y fácil de trabajar durante la temporada.”</span><span data-lang="en">“Very organized, very professional, and easy to work with during tax season.”</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="preguntas">
+      <div class="container">
+        <div class="section-head">
+          <h2><span data-lang="es">Preguntas frecuentes</span><span data-lang="en">Frequently asked questions</span></h2>
+          <p><span data-lang="es">Estas preguntas ayudan a reducir dudas y aumentar confianza.</span><span data-lang="en">These questions reduce confusion and build trust.</span></p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary><span data-lang="es">¿Qué documentos debo llevar a mi cita?</span><span data-lang="en">What documents should I bring to my appointment?</span></summary>
+            <p><span data-lang="es">W-2, 1099, declaración del año anterior, identificación oficial, tarjetas de Seguro Social o documentos de ITIN y cualquier gasto relacionado con impuestos que aplique a tu caso.</span><span data-lang="en">W-2s, 1099s, prior year tax return, photo ID, Social Security cards or ITIN documents, and any tax-related expenses that apply to your situation.</span></p>
+          </details>
+          <details>
+            <summary><span data-lang="es">¿Ofrecen servicios en español?</span><span data-lang="en">Do you offer services in Spanish?</span></summary>
+            <p><span data-lang="es">Sí. Actualiza esta respuesta según el nivel de apoyo en español que ofrezca el negocio.</span><span data-lang="en">Yes. Update this answer based on the level of Spanish-language support the business offers.</span></p>
+          </details>
+          <details>
+            <summary><span data-lang="es">¿Trabajan con pequeños negocios?</span><span data-lang="en">Do you work with small businesses?</span></summary>
+            <p><span data-lang="es">Sí. El sitio está diseñado para atraer tanto clientes individuales como dueños de negocios.</span><span data-lang="en">Yes. The site is designed to attract both individual and business clients.</span></p>
+          </details>
+          <details>
+            <summary><span data-lang="es">¿Cómo agendo una cita?</span><span data-lang="en">How do I schedule an appointment?</span></summary>
+            <p><span data-lang="es">Los clientes pueden llamar, enviar correo o completar el formulario de contacto.</span><span data-lang="en">Clients can call, email, or complete the contact form.</span></p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="contacto">
+      <div class="container">
+        <div class="section-head">
+          <h2><span data-lang="es">Contáctanos</span><span data-lang="en">Contact us</span></h2>
+          <p><span data-lang="es"></span><span data-lang="en"></span></p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <h3><span data-lang="es">Información del negocio</span><span data-lang="en">Business information</span></h3>
+            <p>
+              Del Sol Income Tax Services<br>
+              239 S Federal Blvd.<br>
+              Denver, CO 80223
+            </p>
+            <ul class="contact-list">
+              <li><span data-lang="es">Teléfono: 720-732-7069</span><span data-lang="en">Phone: 720-732-7069</span></li>
+              <li><span data-lang="es">Correo:mariadanielquezada@gmail.com</span><span data-lang="en">Email:mariadanielquezada@gmail.com</span></li>
+              <li><span data-lang="es">Horario: Lun a Sáb, 11:00 AM a 7:00 PM</span><span data-lang="en">Hours: Mon to Sat, 11:00 AM to 7:00 PM</span></li>
+	      <li><span data-lang="es">Durante la temporada de impuestos abrrimos los domingos de 11:00 AM a 7:00 PM</span><span data-lang="en">Hours: During tax session we are open from 11:00 AM to 7:00 PM</span></li>
+              <li><span data-lang="es">Citas virtuales y presenciales disponibles</span><span data-lang="en">Virtual and in-person appointments available</span></li>
+            </ul>
+          </div>
+
+          <div class="contact-panel">
+            <h3><span data-lang="es">Solicita una cita</span><span data-lang="en">Request an appointment</span></h3>
+            <p><span data-lang="es">Este formulario es visual. Para recibir mensajes reales, conéctalo a Formspree, Netlify Forms o Google Forms.</span><span data-lang="en">This form is visual only. To receive real messages, connect it to Formspree, Netlify Forms, or Google Forms.</span></p>
+            <form action="https://formspree.io/f/mbdzeypa" method="POST">
+              <div>
+                <label for="name">
+		  <span data-lang="es">Nombre completo</span>
+		  <span data-lang="en">Full Name</span>
+	        </label>
+                <input id="name="name" type="text" placeholder="Your name" required />
+              </div>
+
+              <div>
+                <label for="email">
+		  <span data-lang="es">Correo electrónico</span>
+		  <span data-lang="en">Email</span>
+		</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" />
+              </div>
+
+              <div>
+                <label for="phone">
+		  <span data-lang="es">Teléfono</span>
+		  <span data-lang="en">Phone</span>
+		</label>
+                <input id="phone" name="phone" type="tel" placeholder="720-732-7069" />
+              </div>
+
+              <div>
+                <label for="service">
+		  <span data-lang="es">Servicio que necesitas</span>
+		  <span data-lang="en">Service Needed</span>
+		</label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+      		  <option value="Declaración individual">Declaración individual</option>
+      		  <option value="Declaración de negocio">Declaración de negocio</option>
+      		  <option value="Planeación fiscal">Planeación fiscal</option>
+      		  <option value="Bookkeeping">Bookkeeping</option>
+    		  <option value="Pregunta general">Pregunta general</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message">
+		  <span data-lang="es">Mensaje</span>
+		  <span data-lang="en">Message</span>
+		</label>
+                <textarea id="message" name="message" placeholder="Tell us how we can help"></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">
+                <span data-lang="es">Enviar solicitud</span>
+                <span data-lang="en">Send Request</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>
+        <strong>Del Sol Income Tax Services</strong>
+        <div class="small"><span data-lang="es">Apoyo profesional de impuestos para individuos y pequeños negocios.</span><span data-lang="en">Professional tax support for individuals and small businesses.</span></div>
+      </div>
+      <div class="small">© 2026 Del Sol Income Tax Services. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const btnEs = document.getElementById('btn-es');
+    const btnEn = document.getElementById('btn-en');
+
+    function setLanguage(lang) {
+      body.classList.remove('lang-es', 'lang-en');
+      body.classList.add(`lang-${lang}`);
+      document.documentElement.lang = lang;
+      btnEs.classList.toggle('active', lang === 'es');
+      btnEn.classList.toggle('active', lang === 'en');
+      localStorage.setItem('delSolLanguage', lang);
+    }
+
+    btnEs.addEventListener('click', () => setLanguage('es'));
+    btnEn.addEventListener('click', () => setLanguage('en'));
+
+    const savedLang = localStorage.getItem('delSolLanguage') || 'es';
+    setLanguage(savedLang);
+  </script>
+</body>
+</html>
